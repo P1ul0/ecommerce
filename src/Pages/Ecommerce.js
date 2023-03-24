@@ -1,5 +1,6 @@
 import { Body } from "../Component/Body"
 import { Header } from "../Component/Header"
+import"./style.css"
 
 
 export const Ecommerce = () => {
@@ -7,7 +8,10 @@ export const Ecommerce = () => {
     return (
         <>
         <Header/>
-        <Body className= "Body"/>
+        <div className="corpo">
+        <Body/>
+        </div>
+        
         </>
     )
 }
