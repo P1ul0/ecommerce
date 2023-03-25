@@ -4,7 +4,7 @@
     align-items: center;
     width: 100%;
     min-height: 50px;
-    background-color: white;
+    background-color: #FFF2CC;
     
 }
 .subheader{
@@ -24,6 +24,25 @@
 .img_logo {
     width: 30%;
     
+}
+.btn_carrinho{
+    background-color: #FFF2CC;
+    display: flex;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+.num_carrinho {
+    position: relative;
+    top: -20px;
+    right: 40px;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFF2CC;
 }
 
 .img_carrinho{
