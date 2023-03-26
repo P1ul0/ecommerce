@@ -19,6 +19,7 @@ import { api, urlApi } from "../../Api/api";
 
 export const Cart = ({ closeCart, products }) => {
   const [cart, setCart] = useState([]);
+  const [quantify, setQuantify] = useState(1)
 
   useEffect(() => {
     (async () => {
@@ -34,23 +35,27 @@ export const Cart = ({ closeCart, products }) => {
   }
 
 
-  let soma = 0
+  
 
+  
+
+  
+  let soma = 0
   return (
     <Container>
       <Button onClick={close}></Button>
       {cart.map((product) => {
         soma += product.price;
-        return(
-            <Products>
+          return(
+            <Products key={product.id}>
                 <ImgProducts src={product.images[0]}/>
                 <TextProducts>{product.title}</TextProducts>
                 <PriceProducts>R${product.price}</PriceProducts>
                 <ButtonAumentar><ImgButtonAumentar/></ButtonAumentar>
-                <TextMeioButton>1</TextMeioButton>
+                <TextMeioButton>{quantify}</TextMeioButton> 
                 <ButtonDiminuir><ImgButtonDiminuir/></ButtonDiminuir>
             </Products>
-        )
+          )
       })}
       <PriceTextProducts>Total: R${soma.toFixed(2)}</PriceTextProducts>
       <ButtonCompraTotal>
@@ -58,4 +63,5 @@ export const Cart = ({ closeCart, products }) => {
       </ButtonCompraTotal>
     </Container>
   );
+ 
 };
