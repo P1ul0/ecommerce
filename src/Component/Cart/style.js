@@ -4,7 +4,7 @@ import {BsFillCartPlusFill , BsFillCartDashFill} from "react-icons/bs"
 
 
 export const Container = styled.div` 
-    background-color: rgba(98, 205, 255,0.7);
+    background-color: rgba(98, 205, 255,0.8);
     height: 100vh;
     width: 400px;
     position: fixed;
@@ -56,7 +56,7 @@ export const PriceProducts = styled.p`
 export const ButtonAumentar = styled.button`
     position: fixed;
     top: 100px;
-    left: 190px;
+    left: 200px;
     height: 30px;
     width: 30px;
     border: none;
@@ -100,6 +100,7 @@ export const PriceTextProducts = styled.p`
     position: absolute;
     top: 700px;
     left: 10px;
+    color: white;
 `
 export const ButtonCompraTotal = styled.button`
     position: fixed;

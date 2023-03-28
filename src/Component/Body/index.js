@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import { api } from "../../Api/api"
-import {BsFillCartPlusFill} from "react-icons/bs"
-import "./style.css"
 
-export const Body = ({addProducts}) =>{
+import "./style"
+import { Container, DescriptionProduct, ImgProduct, PriceProduct, Product, TitleProduct, Btn, ImgButton } from "./style"
+
+export const Body = ({addProducts, counter, setCounter}) =>{
     const [products, setProducts] = useState([])
 
     const getProducts = async () => {
@@ -14,25 +15,24 @@ export const Body = ({addProducts}) =>{
         getProducts()
     },[])
 
-    function addCart(id){
+    function addCart(id, addcounter){
         addProducts(id)
+        setCounter(addcounter + 1)
     }
 
-
-    
     return(
-        <div className="conteiner">
+        <Container>
          { products.map((product) => {
             return(
-                <div className="product" key={product.id}>
-                <img className="img_product" src={product.images[0]}/>
-                <p className="title_product">{product.title}</p>
-                <p className="description_product">{product.description}</p>
-                <p className="price_product">R${product.price}</p>
-                <button className="btn" onClick={() => addCart(product.id)} ><BsFillCartPlusFill className="add_products" /></button>
-            </div>
+                <Product key={product.id}>
+                <ImgProduct src={product.images[0]}/>
+                <TitleProduct>{product.title}</TitleProduct>
+                <DescriptionProduct>{product.description}</DescriptionProduct>
+                <PriceProduct>R${product.price}</PriceProduct>
+                <Btn onClick={() => addCart(product.id, counter)} ><ImgButton/></Btn>
+            </Product>
             )
          })} 
-        </div>
+        </Container>
     )
 }
